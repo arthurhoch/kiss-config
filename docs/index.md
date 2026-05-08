@@ -82,6 +82,7 @@ server.port=8080
 - [Examples](examples.md)
 - [Testing](testing.md)
 - [Testing Report](testing-report.md)
+- [Safe Code Cleanup](code-cleanup.md)
 - [Release](release.md)
 - [Maven Central](maven-central.md)
 - [GitHub Pages](github-pages.md)

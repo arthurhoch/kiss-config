@@ -57,6 +57,7 @@ This file indexes every Markdown document in the repository, excluding generated
 | [`../docs/examples.md`](../docs/examples.md) | Complete practical examples. | README/docs examples work. | User-facing | Yes |
 | [`../docs/testing.md`](../docs/testing.md) | Testing guidance and project test coverage expectations. | Test work. | User-facing | No |
 | [`../docs/testing-report.md`](../docs/testing-report.md) | Current verification report and known limits. | Verification reporting. | User-facing | No |
+| [`../docs/code-cleanup.md`](../docs/code-cleanup.md) | Safe cleanup, coverage, and deletion policy. | Cleanup or dead-code review. | Maintainer-facing | Yes |
 | [`../docs/release.md`](../docs/release.md) | Manual release process and Central Portal flow. | Release work. | Maintainer-facing | Yes |
 | [`../docs/maven-central.md`](../docs/maven-central.md) | Maven Central/Sonatype Central Portal setup. | Release setup. | Maintainer-facing | Yes |
 | [`../docs/github-pages.md`](../docs/github-pages.md) | GitHub Pages setup and workflow expectations. | Docs publication work. | Maintainer-facing | Yes |
