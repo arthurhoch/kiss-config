@@ -30,6 +30,7 @@ This file indexes every Markdown document in the repository, excluding generated
 | [`../GITHUB_PUSH_REPORT.md`](../GITHUB_PUSH_REPORT.md) | First GitHub push report and manual next steps. | Repository setup and push history. | Maintainer-facing | Yes |
 | [`../DOCUMENTATION_UPGRADE_REPORT.md`](../DOCUMENTATION_UPGRADE_REPORT.md) | Documentation upgrade summary and verification results. | Before release docs review. | Maintainer-facing | Yes |
 | [`../DOCS_IMPLEMENTATION_AUDIT.md`](../DOCS_IMPLEMENTATION_AUDIT.md) | Documentation-to-implementation audit and verification results. | Before release documentation signoff. | Maintainer-facing | Yes |
+| [`../RELEASE_0_1_0_REPORT.md`](../RELEASE_0_1_0_REPORT.md) | Release 0.1.0 workflow, tag, GitHub Release, Central Portal, and next-version report. | After or during release verification. | Maintainer-facing | Yes |
 
 ## User Documentation
 
