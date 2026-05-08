@@ -42,4 +42,6 @@ mvn -Pdependency-check verify
 mvn -Pspotbugs verify
 ```
 
+CodeQL, Dependency Review, Dependabot, and OpenSSF Scorecard are documented in [security-hardening.md](security-hardening.md), including the required GitHub repository settings.
+
 Use [code-cleanup.md](code-cleanup.md) before deleting code, especially public API, secret-masking behavior, source ordering, merge logic, or mapper behavior.

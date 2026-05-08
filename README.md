@@ -407,6 +407,7 @@ These libraries are independent, zero-dependency Java 17+ projects. Use only the
 - [Testing](docs/testing.md)
 - [Testing Report](docs/testing-report.md)
 - [Safe Code Cleanup](docs/code-cleanup.md)
+- [Security Hardening](docs/security-hardening.md)
 - [Release](docs/release.md)
 - [AI Project Manual](docs/AI_PROJECT_MANUAL.md)
 
@@ -437,7 +438,7 @@ mvn -Pdependency-check verify
 
 ## Security and Quality
 
-GitHub Actions run CI, CodeQL, GitHub Pages deployment, and the manual release workflow. Dependabot tracks Maven and GitHub Actions updates. The Pages workflow publishes generated Javadocs under `/javadocs/`. SpotBugs and OWASP Dependency-Check are optional Maven profiles so normal CI stays fast.
+GitHub Actions run CI, CodeQL, Dependency Review, OpenSSF Scorecard, GitHub Pages deployment, and the manual release workflow. Dependabot tracks Maven and GitHub Actions updates. The Pages workflow publishes generated Javadocs under `/javadocs/`. SpotBugs and OWASP Dependency-Check are optional Maven profiles so normal CI stays fast. See [Security Hardening](docs/security-hardening.md).
 
 JaCoCo coverage is generated during `verify`. Read the HTML report at `target/site/jacoco/index.html`; use `target/site/jacoco/jacoco.xml` for Codecov or Sonar if those services are configured later. No coverage badge is shown until a real external coverage service is configured.
 

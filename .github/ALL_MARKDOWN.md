@@ -12,7 +12,7 @@ This file indexes every Markdown document in the repository, excluding generated
 | Env files or profiles | `docs/env-files.md`, `docs/profiles.md`, `docs/config-locations.md`, related architecture modules |
 | Mapping or annotations | `docs/mapping.md`, `docs/annotations.md`, `.github/architecture/modules/mapping.md`, `.github/architecture/modules/type-conversion.md` |
 | Release work | `docs/release.md`, `docs/maven-central.md`, `docs/github-pages.md`, `CHANGELOG.md`, `RELEASE_READINESS_REPORT.md`, `FINAL_RELEASE_AUDIT.md` |
-| Security or secrets | `SECURITY.md`, `docs/secrets.md`, `.github/architecture/modules/secrets-and-reporting.md` |
+| Security or secrets | `SECURITY.md`, `docs/security-hardening.md`, `docs/secrets.md`, `.github/architecture/modules/secrets-and-reporting.md` |
 
 ## Root Documents
 
@@ -51,6 +51,7 @@ This file indexes every Markdown document in the repository, excluding generated
 | [`../docs/mapping.md`](../docs/mapping.md) | Record mapping, types, null behavior, unsupported targets. | Mapper/converter work. | User-facing | Yes |
 | [`../docs/annotations.md`](../docs/annotations.md) | `@ConfigName`, `@DefaultValue`, `@Required`, `@Secret`. | Annotation or mapper work. | User-facing | Yes |
 | [`../docs/security.md`](../docs/security.md) | Security model, dependency policy, and safe reporting guidance. | Security docs and policy changes. | User-facing | Yes |
+| [`../docs/security-hardening.md`](../docs/security-hardening.md) | Security workflow hardening, local checks, and manual GitHub settings. | Security workflow or repository settings changes. | Maintainer-facing | Yes |
 | [`../docs/secrets.md`](../docs/secrets.md) | Automatic and annotation-based secret masking. | Reports, exceptions, secret detection. | User-facing | Yes |
 | [`../docs/errors.md`](../docs/errors.md) | Exception model and example messages. | Error handling changes. | User-facing | Yes |
 | [`../docs/reporting.md`](../docs/reporting.md) | `KissConfigResult` and report output. | Report/source metadata work. | User-facing | Yes |

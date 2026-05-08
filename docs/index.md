@@ -76,6 +76,7 @@ server.port=8080
 - [Mapping](mapping.md)
 - [Annotations](annotations.md)
 - [Security](security.md)
+- [Security Hardening](security-hardening.md)
 - [Secrets](secrets.md)
 - [Errors](errors.md)
 - [Reporting](reporting.md)
