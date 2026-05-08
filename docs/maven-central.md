@@ -2,7 +2,7 @@
 
 KissConfig is prepared for Sonatype Central Portal publishing.
 
-The artifact must not be described as published until release `0.1.0` has been deployed, reviewed, published in Central Portal, and indexed.
+Release `0.1.0` has a GitHub release. The artifact must not be described as publicly available from Maven Central until it has been deployed, reviewed, published in Central Portal, and indexed.
 
 ## Coordinates
 
@@ -10,7 +10,7 @@ The artifact must not be described as published until release `0.1.0` has been d
 io.github.arthurhoch:kiss-config
 ```
 
-First release target:
+Latest GitHub release:
 
 ```text
 0.1.0
@@ -24,7 +24,7 @@ Current development version after the first release:
 
 ## Required Manual Setup
 
-Before the first release:
+Before future releases or Central publication completion:
 
 1. Push the repository to `https://github.com/arthurhoch/kiss-config`.
 2. Confirm GitHub Actions CI is green on `main`.
@@ -80,12 +80,12 @@ JUnit Jupiter is allowed for tests. Production code must remain standard-library
 
 ## Release Flow
 
-1. Keep `main` on `0.1.0-SNAPSHOT` until the release workflow.
-2. Run the manual GitHub Actions release workflow with `0.1.0`.
+1. Keep `main` on the current `-SNAPSHOT` development version until a release workflow is intentionally run.
+2. Run the manual GitHub Actions release workflow with the desired non-SNAPSHOT version.
 3. The workflow sets the Maven version, verifies, signs, deploys, tags, and creates a GitHub Release.
 4. Review and publish the deployment in Central Portal if `autoPublish=false`.
 5. Wait for Maven Central indexing.
-6. After validation, update `main` to the next development version, such as `0.1.1-SNAPSHOT`.
+6. After validation, update `main` to the next development version, such as `0.1.2-SNAPSHOT`.
 
 ## Indexing Delay
 

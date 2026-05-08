@@ -7,11 +7,11 @@ Do not create tags, GitHub releases, or Maven Central publications outside the i
 ## Current State
 
 - Current development version after the first release: `0.1.1-SNAPSHOT`
-- First release target: `0.1.0`
-- Maven Central status: prepared, not claimed as published until the release exists and is indexed
+- Latest GitHub release: `0.1.0`
+- Maven Central status: release workflow completed, but public availability is not claimed until Central Portal publication and indexing are confirmed
 - Publishing path: Sonatype Central Portal through `org.sonatype.central:central-publishing-maven-plugin`
 
-## Before The First Release
+## Before Future Releases Or Central Publication Completion
 
 1. Push the repository to `https://github.com/arthurhoch/kiss-config`.
 2. Confirm CI passes on `main`.

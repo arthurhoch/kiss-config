@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>KissConfig</name>
-    <description>Zero-dependency Java configuration loading for immutable typed objects.</description>
+    <description>Tiny zero-dependency Java 17+ configuration library for properties, .env files, system properties, and environment variables.</description>
     <url>https://github.com/arthurhoch/kiss-config</url>
 
     <licenses>

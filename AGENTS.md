@@ -43,7 +43,7 @@ Do not:
 - publish to Maven Central
 - create Git tags
 - create GitHub releases
-- change `0.1.0-SNAPSHOT` to `0.1.0` outside the intentional release workflow
+- change the current development `-SNAPSHOT` version to a release version outside the intentional release workflow
 
 ## Coding Rules
 
@@ -80,7 +80,7 @@ Do not:
 
 ## Release Rules
 
-- Keep `0.1.0-SNAPSHOT` until the explicit release workflow.
+- Keep the current development version on a `-SNAPSHOT` suffix until the explicit release workflow.
 - Maven Central publishing is Central Portal-oriented.
 - Required GitHub secrets:
   - `MAVEN_CENTRAL_USERNAME`

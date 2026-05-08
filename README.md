@@ -1,25 +1,41 @@
 # KissConfig
 
 [![CI](https://github.com/arthurhoch/kiss-config/actions/workflows/ci.yml/badge.svg)](https://github.com/arthurhoch/kiss-config/actions/workflows/ci.yml)
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-after%20release-lightgrey.svg)](https://central.sonatype.com/artifact/io.github.arthurhoch/kiss-config)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.arthurhoch/kiss-config.svg)](https://central.sonatype.com/artifact/io.github.arthurhoch/kiss-config)
+[![Java](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://openjdk.org/projects/jdk/17/)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![CodeQL](https://github.com/arthurhoch/kiss-config/actions/workflows/codeql.yml/badge.svg)](https://github.com/arthurhoch/kiss-config/actions/workflows/codeql.yml)
+[![Docs](https://github.com/arthurhoch/kiss-config/actions/workflows/pages.yml/badge.svg)](https://github.com/arthurhoch/kiss-config/actions/workflows/pages.yml)
 
-KissConfig is a zero-production-dependency Java 17+ configuration library.
+Tiny zero-dependency Java 17+ configuration library for properties, .env files, system properties, and environment variables.
+
+Part of the KISS Java Libraries family: small, explicit, zero-dependency Java 17+ libraries. Each project is independent. Use only the modules you need.
 
 > Load configuration from properties, .env files, system properties, and environment variables directly into immutable Java records.
 
 KissConfig reads configuration sources, normalizes keys, merges them deterministically, interpolates variables, and maps the result into a typed config object. Java records are the supported mapping target in v0.1.0.
 
+## Status
+
+Latest GitHub release: `0.1.0`.
+
+Current development version: `0.1.1-SNAPSHOT`.
+
+The release workflow completed for `0.1.0`, but the artifact was not yet visible from Maven Central public repositories during this audit. Until Maven Central indexing is confirmed, use a local build.
+
+## Why this exists
+
+KissConfig exists for Java projects that need deterministic configuration loading without Spring, MicroProfile Config, cloud secret managers, YAML/TOML/JSON parsers, or runtime dependencies. It keeps source order, merge behavior, interpolation, mapping, and secret masking explicit.
+
 ## Install
 
-KissConfig is prepared for Maven Central publishing, but the artifact should be treated as unavailable until the first release is actually published and indexed.
-
-Until then, use a local build:
+Use a local build until Maven Central availability is confirmed:
 
 ```bash
 mvn -B clean install
 ```
 
-After the first release is published:
+After Maven Central indexing is confirmed:
 
 ```xml
 <dependency>
@@ -66,6 +82,15 @@ database.url=jdbc:postgresql://localhost:5432/app
 ```
 
 Normal JavaBeans, field-based classes, setters, and arbitrary constructors are not supported in v0.1.0. Passing a normal class currently fails with `ConfigMappingException`. Support for simple JavaBeans or field-based classes is a roadmap item.
+
+## Design Principles
+
+- KISS: keep configuration loading deterministic, explicit, and inspectable.
+- Zero production dependencies.
+- Java 17+ standard APIs.
+- Small public API centered on records, builder configuration, source order, merge strategy, and reports.
+- Predictable errors and secret masking in reports and exceptions.
+- No framework lock-in.
 
 ## Explicit Builder
 
@@ -354,9 +379,23 @@ Booleans accept `true/false`, `yes/no`, `on/off`, and `1/0`. Durations accept IS
 - No conversion SPI.
 - No escaped commas in lists.
 
+## Related KISS Projects
+
+These libraries are independent, zero-dependency Java 17+ projects. Use only the modules you need.
+
+| Project | Purpose |
+|---|---|
+| [kiss-json](https://github.com/arthurhoch/kiss-json) | Field-based JSON serialization and deserialization. |
+| [kiss-requests](https://github.com/arthurhoch/kiss-requests) | Simple HTTP client built on Java HttpClient. |
+| [kiss-server](https://github.com/arthurhoch/kiss-server) | Small HTTP/1.1 server for simple REST-style applications. |
+| [kiss-config](https://github.com/arthurhoch/kiss-config) | Configuration loading from properties, .env files, system properties, and environment variables. |
+| [kiss-binary](https://github.com/arthurhoch/kiss-binary) | Explicit binary IO for primitive binary formats. |
+
 ## Documentation
 
+- [GitHub Pages](https://arthurhoch.github.io/kiss-config/)
 - [Getting Started](docs/getting-started.md)
+- [AI Usage Guide](docs/ai-usage.md)
 - [API](docs/api.md)
 - [Search Order](docs/search-order.md)
 - [Config Locations](docs/config-locations.md)
@@ -365,10 +404,17 @@ Booleans accept `true/false`, `yes/no`, `on/off`, and `1/0`. Durations accept IS
 - [Env Files](docs/env-files.md)
 - [Mapping](docs/mapping.md)
 - [Examples](docs/examples.md)
+- [Testing](docs/testing.md)
+- [Testing Report](docs/testing-report.md)
 - [Release](docs/release.md)
 - [AI Project Manual](docs/AI_PROJECT_MANUAL.md)
 
 Generated Javadocs are published by the GitHub Pages workflow under `/javadocs/`.
+
+## Requirements
+
+- Java 17 or newer.
+- Maven for building from source.
 
 ## Build
 
@@ -380,6 +426,10 @@ mvn -B dependency:list -DincludeScope=compile
 
 The compile-scope dependency list must remain `none`.
 
+## Security and Quality
+
+GitHub Actions run CI, CodeQL, GitHub Pages deployment, and the manual release workflow. Dependabot tracks Maven and GitHub Actions updates. The Pages workflow publishes generated Javadocs under `/javadocs/`.
+
 ## License
 
-Apache License 2.0.
+Apache License 2.0. Copyright 2026 Arthur Hoch. See [LICENSE](LICENSE).

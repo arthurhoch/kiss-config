@@ -864,7 +864,7 @@ Avoid tests that depend on the real machine environment. Use injected maps for s
 
 ## 22. Release Process
 
-Current development version is `0.1.0-SNAPSHOT`.
+Current development version is `0.1.1-SNAPSHOT`.
 
 Release version should be `0.1.0`.
 
@@ -881,7 +881,7 @@ Before release:
 5. Run the manual release workflow with version `0.1.0`.
 6. Review and publish the validated deployment in Central Portal if `autoPublish=false`.
 7. Wait for Maven Central indexing.
-8. Update `main` to the next development version, such as `0.1.1-SNAPSHOT`, after release.
+8. Update `main` to the next development version, such as `0.1.2-SNAPSHOT`, after a future release.
 
 Do not claim Maven Central availability before the artifact is actually published and indexed.
 
@@ -911,7 +911,7 @@ Rules:
 - Never weaken tests to make builds pass.
 - Never claim a release exists before it exists.
 - Do not add framework-specific code.
-- Do not change `0.1.0-SNAPSHOT` to `0.1.0` except during the intentional release flow.
+- Do not change a development `-SNAPSHOT` version to a release version except during the intentional release flow.
 
 ## 24. Known Limitations
 

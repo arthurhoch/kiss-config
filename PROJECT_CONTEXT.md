@@ -171,7 +171,7 @@ Annotations:
 
 ## Release Rules
 
-- Keep `0.1.0-SNAPSHOT` until the explicit release workflow.
+- Keep the current development version on a `-SNAPSHOT` suffix until the explicit release workflow.
 - Do not publish to Maven Central outside the release workflow.
 - Do not tag unless the human explicitly asks.
 - Configure Sonatype Central Portal namespace `io.github.arthurhoch`.

@@ -21,6 +21,7 @@ This file indexes every Markdown document in the repository, excluding generated
 | [`../README.md`](../README.md) | User-facing overview, install status, quick start, examples, limitations, docs links. | Always before user-facing docs or API changes. | User-facing | Yes |
 | [`../PROJECT_CONTEXT.md`](../PROJECT_CONTEXT.md) | Short pasteable AI context for KissConfig. | Early in AI sessions. | AI-facing | Yes |
 | [`../AGENTS.md`](../AGENTS.md) | Required AI agent rules, read order, guardrails, command checklist. | First for AI/code-agent work. | AI-facing | Yes |
+| [`../CAVEMAN.md`](../CAVEMAN.md) | Compact low-token project summary for AI agents and maintainers. | Early in AI sessions. | AI-facing | No |
 | [`../CHANGELOG.md`](../CHANGELOG.md) | User-visible change history. | Any behavior, docs, release, or API change. | User-facing | Yes |
 | [`../CONTRIBUTING.md`](../CONTRIBUTING.md) | Contribution process and checks. | Before contributor workflow or policy edits. | User-facing | No |
 | [`../SECURITY.md`](../SECURITY.md) | Security reporting and secret-handling expectations. | Security, secrets, reports, exceptions. | User-facing | Yes |
@@ -37,6 +38,7 @@ This file indexes every Markdown document in the repository, excluding generated
 | Path | Purpose | When To Read | Audience | Release-Critical |
 |---|---|---|---|---|
 | [`../docs/index.md`](../docs/index.md) | GitHub Pages landing page. | Docs site changes. | User-facing | Yes |
+| [`../docs/ai-usage.md`](../docs/ai-usage.md) | User-facing AI usage guidance for consumer projects. | AI usage docs and examples. | User-facing | No |
 | [`../docs/getting-started.md`](../docs/getting-started.md) | First-use guide and basic builder usage. | Onboarding docs. | User-facing | Yes |
 | [`../docs/api.md`](../docs/api.md) | Compact public API reference. | Public API changes. | User-facing | Yes |
 | [`../docs/search-order.md`](../docs/search-order.md) | Read-order semantics, presets, `externalFirst()` caveats. | Source priority or search order work. | User-facing | Yes |
@@ -48,11 +50,13 @@ This file indexes every Markdown document in the repository, excluding generated
 | [`../docs/interpolation.md`](../docs/interpolation.md) | `${NAME}` and `${NAME:default}` behavior. | Interpolation work. | User-facing | Yes |
 | [`../docs/mapping.md`](../docs/mapping.md) | Record mapping, types, null behavior, unsupported targets. | Mapper/converter work. | User-facing | Yes |
 | [`../docs/annotations.md`](../docs/annotations.md) | `@ConfigName`, `@DefaultValue`, `@Required`, `@Secret`. | Annotation or mapper work. | User-facing | Yes |
+| [`../docs/security.md`](../docs/security.md) | Security model, dependency policy, and safe reporting guidance. | Security docs and policy changes. | User-facing | Yes |
 | [`../docs/secrets.md`](../docs/secrets.md) | Automatic and annotation-based secret masking. | Reports, exceptions, secret detection. | User-facing | Yes |
 | [`../docs/errors.md`](../docs/errors.md) | Exception model and example messages. | Error handling changes. | User-facing | Yes |
 | [`../docs/reporting.md`](../docs/reporting.md) | `KissConfigResult` and report output. | Report/source metadata work. | User-facing | Yes |
 | [`../docs/examples.md`](../docs/examples.md) | Complete practical examples. | README/docs examples work. | User-facing | Yes |
 | [`../docs/testing.md`](../docs/testing.md) | Testing guidance and project test coverage expectations. | Test work. | User-facing | No |
+| [`../docs/testing-report.md`](../docs/testing-report.md) | Current verification report and known limits. | Verification reporting. | User-facing | No |
 | [`../docs/release.md`](../docs/release.md) | Manual release process and Central Portal flow. | Release work. | Maintainer-facing | Yes |
 | [`../docs/maven-central.md`](../docs/maven-central.md) | Maven Central/Sonatype Central Portal setup. | Release setup. | Maintainer-facing | Yes |
 | [`../docs/github-pages.md`](../docs/github-pages.md) | GitHub Pages setup and workflow expectations. | Docs publication work. | Maintainer-facing | Yes |
