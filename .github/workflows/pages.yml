@@ -1,0 +1,70 @@
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare Markdown site
+        run: |
+          mkdir -p pages
+          cp -R docs/. pages/
+
+      - name: Build Markdown with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: pages
+          destination: _site
+
+      - name: Generate Javadocs
+        run: mvn -B -DskipTests javadoc:javadoc
+
+      - name: Add Javadocs
+        run: |
+          mkdir -p _site/javadocs
+          cp -R target/site/apidocs/. _site/javadocs/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
