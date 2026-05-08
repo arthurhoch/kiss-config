@@ -2,7 +2,7 @@
 
 All notable changes to KissConfig are documented here.
 
-## 0.1.0-SNAPSHOT
+## 0.1.0 - 2026-05-08
 
 - Initial project structure for the `io.github.arthurhoch:kiss-config` Maven artifact.
 - Added zero-dependency configuration loading for `.properties`, explicit `.env` files, Java system properties, and operating-system environment variables.

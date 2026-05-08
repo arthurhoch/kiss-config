@@ -6,7 +6,7 @@ Do not create tags, GitHub releases, or Maven Central publications outside the i
 
 ## Current State
 
-- Development version: `0.1.0-SNAPSHOT`
+- Release commit version: `0.1.0`
 - First release target: `0.1.0`
 - Maven Central status: prepared, not claimed as published until the release exists and is indexed
 - Publishing path: Sonatype Central Portal through `org.sonatype.central:central-publishing-maven-plugin`
