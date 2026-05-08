@@ -6,6 +6,11 @@ import java.util.Optional;
 
 /**
  * Immutable value object describing one configuration source location in a {@link SearchOrder}.
+ *
+ * <p>{@link #path(String)} means a directory, {@link #file(String)} means one explicit file, and
+ * {@link #envFile(String)} means one explicit env file. Env files are never discovered unless
+ * env loading is configured. See {@code docs/config-locations.md} and {@code docs/env-files.md}
+ * for source-resolution details.</p>
  */
 public final class ConfigLocation {
     private final ConfigLocationType type;
@@ -19,6 +24,9 @@ public final class ConfigLocation {
     /**
      * Creates a location that reads application classpath property resources.
      *
+     * <p>With an active profile, the profile property resource is attempted after the base
+     * property resource.</p>
+     *
      * @return a classpath location
      */
     public static ConfigLocation classpath() {
@@ -28,6 +36,9 @@ public final class ConfigLocation {
     /**
      * Creates a location that reads library defaults from META-INF/kiss-config/defaults.properties.
      *
+     * <p>This location does not scan arbitrary dependency {@code application.properties}
+     * resources.</p>
+     *
      * @return a classpath library defaults location
      */
     public static ConfigLocation classpathLibraries() {
@@ -36,6 +47,8 @@ public final class ConfigLocation {
 
     /**
      * Creates a location that reads from the directory containing the running application JAR when available.
+     *
+     * <p>When the process is not running from a JAR, this location is skipped and reported.</p>
      *
      * @return a JAR directory location
      */
@@ -55,6 +68,9 @@ public final class ConfigLocation {
     /**
      * Creates a location that treats the value as a directory.
      *
+     * <p>Directory locations load property files and profile property files. They load env files
+     * only when env loading is configured on the builder.</p>
+     *
      * @param directory directory path
      * @return an explicit directory location
      */
@@ -64,6 +80,9 @@ public final class ConfigLocation {
 
     /**
      * Creates a location that treats the value as a directory.
+     *
+     * <p>Directory locations load property files and profile property files. They load env files
+     * only when env loading is configured on the builder.</p>
      *
      * @param directory directory path
      * @return an explicit directory location
@@ -75,6 +94,9 @@ public final class ConfigLocation {
     /**
      * Creates a location that treats the value as one explicit file.
      *
+     * <p>Missing explicit files fail unless
+     * {@link KissConfigBuilder#ignoreMissingExplicitFiles(boolean)} is enabled.</p>
+     *
      * @param file file path
      * @return an explicit file location
      */
@@ -84,6 +106,9 @@ public final class ConfigLocation {
 
     /**
      * Creates a location that treats the value as one explicit file.
+     *
+     * <p>Missing explicit files fail unless
+     * {@link KissConfigBuilder#ignoreMissingExplicitFiles(boolean)} is enabled.</p>
      *
      * @param file file path
      * @return an explicit file location
@@ -95,6 +120,10 @@ public final class ConfigLocation {
     /**
      * Creates a placeholder location for the env file configured on {@link KissConfigBuilder#envFile(String)}.
      *
+     * <p>If the builder has no env file configured, this location is skipped and reported. With
+     * an active profile, the builder-configured base env file is explicit and the generated
+     * profile variant is optional.</p>
+     *
      * @return a builder-configured env file location
      */
     public static ConfigLocation envFile() {
@@ -103,6 +132,9 @@ public final class ConfigLocation {
 
     /**
      * Creates a location that treats the value as one explicit env file.
+     *
+     * <p>This loads exactly the configured file path. Profile variants are not added
+     * automatically for explicit env paths.</p>
      *
      * @param file env file path
      * @return an explicit env file location
@@ -113,6 +145,9 @@ public final class ConfigLocation {
 
     /**
      * Creates a location that treats the value as one explicit env file.
+     *
+     * <p>This loads exactly the configured file path. Profile variants are not added
+     * automatically for explicit env paths.</p>
      *
      * @param file env file path
      * @return an explicit env file location

@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 /**
  * Marks a configuration value as required even when the target type is nullable.
+ *
+ * <p>Missing primitive record components already fail. Use this annotation for object, wrapper,
+ * or nested record components that must be present.</p>
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.RECORD_COMPONENT, ElementType.FIELD})

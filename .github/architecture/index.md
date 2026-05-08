@@ -1,5 +1,7 @@
 # Architecture Index
 
+For AI-oriented project context, read [`../../docs/AI_PROJECT_MANUAL.md`](../../docs/AI_PROJECT_MANUAL.md) after `AGENTS.md` and `PROJECT_CONTEXT.md`. This architecture directory contains binding design rules and module-specific decisions.
+
 KissConfig loads configuration through this deterministic pipeline:
 
 1. `SearchOrder`
@@ -15,7 +17,16 @@ KissConfig loads configuration through this deterministic pipeline:
 11. Typed config object
 12. `KissConfigResult` report
 
-Read the core documents first, then the module documents relevant to the task. Architecture decisions under `decisions/` are binding unless a maintainer explicitly changes them and updates user documentation.
+Read the core documents first, then the module documents relevant to the task. Architecture decisions under `decisions/` are binding unless a maintainer explicitly changes them and updates user documentation, tests, and the AI project manual.
+
+Critical invariants:
+
+- `SearchOrder` is read order.
+- Default merge is `MergeStrategy.FILL_MISSING_ONLY`.
+- `OVERRIDE_EXISTING` and `FAIL_ON_DUPLICATE` are opt-in.
+- `.env` files are opt-in.
+- Java records are the supported mapping target in v0.1.0.
+- Secrets must be masked in reports and exceptions.
 
 ## Core
 

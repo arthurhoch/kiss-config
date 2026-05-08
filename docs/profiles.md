@@ -1,6 +1,16 @@
 # Profiles
 
-KissConfig supports one profile in v0.1.0.
+KissConfig supports one active profile in v0.1.0.
+
+```java
+AppConfig config = KissConfig.builder()
+        .profile("prod")
+        .mapTo(AppConfig.class);
+```
+
+Profiles are never enabled automatically. `SearchOrder.production()` does not imply `profile("prod")`; it only changes source read order.
+
+## Validation
 
 Profile names must match:
 
@@ -8,11 +18,18 @@ Profile names must match:
 [a-zA-Z0-9_-]+
 ```
 
-Rejected examples include empty strings, `../prod`, `prod/test`, and `prod.properties`.
+Rejected examples:
 
-## Property Files
+- empty string
+- `../prod`
+- `prod/test`
+- `prod.properties`
 
-With `.propertyFile("application.properties")` and `.profile("prod")`, directory locations attempt:
+Invalid profiles throw `ConfigInvalidProfileException` before loading starts.
+
+## Property File Expansion
+
+With `.propertyFile("application.properties")` and `.profile("prod")`, directory and classpath locations attempt:
 
 ```text
 application.properties
@@ -26,7 +43,9 @@ myapp.properties
 myapp-prod.properties
 ```
 
-## Env Files
+## Env File Expansion
+
+Env files are still opt-in.
 
 With `.envFile(".env")` and `.profile("prod")`, directory locations attempt:
 
@@ -70,4 +89,18 @@ Because default `MergeStrategy.FILL_MISSING_ONLY` is used:
 - `/opt/app/.env` only fills keys still missing.
 - `/opt/app/.env.prod` only fills keys still missing.
 
-If prod or env values should override base values, configure `MergeStrategy.OVERRIDE_EXISTING`.
+If profile or env files should override base values, configure:
+
+```java
+.mergeStrategy(MergeStrategy.OVERRIDE_EXISTING)
+```
+
+## SearchOrder.production()
+
+`SearchOrder.production()` is an external-first read order. It does not:
+
+- set `profile("prod")`
+- enable `.env` loading by itself
+- add `/etc` or any other fixed path
+
+Configure those choices explicitly.

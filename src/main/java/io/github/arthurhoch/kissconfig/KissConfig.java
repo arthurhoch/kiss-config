@@ -1,7 +1,12 @@
 package io.github.arthurhoch.kissconfig;
 
 /**
- * Entry point for loading configuration.
+ * Entry point for loading configuration into typed Java records.
+ *
+ * <p>The default load path uses {@link SearchOrder#defaults()}, the default property file
+ * {@code application.properties}, no env file unless configured through the builder, and
+ * {@link MergeStrategy#FILL_MISSING_ONLY}. See {@code docs/getting-started.md} and
+ * {@code docs/api.md} for user-facing examples.</p>
  */
 public final class KissConfig {
     private KissConfig() {
@@ -17,9 +22,9 @@ public final class KissConfig {
     }
 
     /**
-     * Loads configuration into the target type using default builder options.
+     * Loads configuration into the target record type using default builder options.
      *
-     * @param targetType target type
+     * @param targetType target record type
      * @param <T> target type
      * @return mapped configuration object
      */

@@ -10,7 +10,9 @@ import java.util.Objects;
  *
  * <p>Search order is read order. With the default {@link MergeStrategy#FILL_MISSING_ONLY},
  * earlier sources have priority because they fill values first. With
- * {@link MergeStrategy#OVERRIDE_EXISTING}, later sources win.</p>
+ * {@link MergeStrategy#OVERRIDE_EXISTING}, later sources win. With
+ * {@link MergeStrategy#FAIL_ON_DUPLICATE}, duplicate canonical keys fail. See
+ * {@code docs/search-order.md} for examples and preset details.</p>
  */
 public final class SearchOrder implements Iterable<ConfigLocation> {
     private final List<ConfigLocation> locations;
@@ -32,6 +34,11 @@ public final class SearchOrder implements Iterable<ConfigLocation> {
 
     /**
      * Returns the default read order.
+     *
+     * <p>The default order reads classpath library defaults, application classpath resources,
+     * JAR directory files, working directory files, Java system properties, and OS environment
+     * variables. It does not include an env-file placeholder, but directory locations read env
+     * files when the builder has configured one.</p>
      *
      * @return default search order
      */
@@ -83,7 +90,8 @@ public final class SearchOrder implements Iterable<ConfigLocation> {
      * Returns a production-oriented external-first order.
      *
      * <p>This order favors externally supplied values under the default
-     * {@link MergeStrategy#FILL_MISSING_ONLY}. It does not hardcode any /etc path.</p>
+     * {@link MergeStrategy#FILL_MISSING_ONLY}. It does not hardcode any /etc path, does not
+     * enable a profile, and does not enable env file loading by itself.</p>
      *
      * @return production search order
      */

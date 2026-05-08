@@ -44,6 +44,9 @@ jobs:
           source: pages
           destination: _site
 
+      - name: Fix generated site permissions
+        run: sudo chown -R "$USER":"$USER" _site
+
       - name: Generate Javadocs
         run: mvn -B -DskipTests javadoc:javadoc
 

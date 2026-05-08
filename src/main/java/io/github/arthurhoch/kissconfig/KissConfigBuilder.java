@@ -18,6 +18,13 @@ import java.util.regex.Pattern;
 
 /**
  * Builder for explicit KissConfig loading.
+ *
+ * <p>Defaults are {@code application.properties}, no env file, no profile,
+ * {@link SearchOrder#defaults()}, and {@link MergeStrategy#FILL_MISSING_ONLY}. Env files are
+ * opt-in through {@link #envFile(String)}, {@link #envFile(Path)}, or an explicit
+ * {@link ConfigLocation#envFile(String)} in the configured search order. See
+ * {@code docs/search-order.md}, {@code docs/profiles.md}, and {@code docs/env-files.md} for
+ * detailed behavior.</p>
  */
 public final class KissConfigBuilder {
     private static final Pattern PROFILE_PATTERN = Pattern.compile("[a-zA-Z0-9_-]+");
@@ -38,6 +45,9 @@ public final class KissConfigBuilder {
     /**
      * Sets the property file name or path used by compatible locations.
      *
+     * <p>With an active profile, directory and classpath locations also attempt a profile variant
+     * such as {@code application-prod.properties} for profile {@code prod}.</p>
+     *
      * @param propertyFile property file
      * @return this builder
      */
@@ -47,6 +57,9 @@ public final class KissConfigBuilder {
 
     /**
      * Sets the property file name or path used by compatible locations.
+     *
+     * <p>With an active profile, directory and classpath locations also attempt a profile variant
+     * such as {@code application-prod.properties} for profile {@code prod}.</p>
      *
      * @param propertyFile property file
      * @return this builder
@@ -59,6 +72,10 @@ public final class KissConfigBuilder {
     /**
      * Configures env file loading.
      *
+     * <p>Env files are not loaded by default. When this method is used, directory-based locations
+     * attempt the configured env file and, when a profile is active, a profile variant. For
+     * {@code .env} and profile {@code prod}, the profile variant is {@code .env.prod}.</p>
+     *
      * @param envFile env file
      * @return this builder
      */
@@ -68,6 +85,11 @@ public final class KissConfigBuilder {
 
     /**
      * Configures env file loading.
+     *
+     * <p>Env files are not loaded by default. When this method is used, directory-based locations
+     * attempt the configured env file and, when a profile is active, a profile variant. For
+     * {@code myapp.env} and profile {@code prod}, the profile variant is
+     * {@code myapp-prod.env}.</p>
      *
      * @param envFile env file
      * @return this builder
@@ -79,6 +101,9 @@ public final class KissConfigBuilder {
 
     /**
      * Sets the active profile.
+     *
+     * <p>Profiles are validated against {@code [a-zA-Z0-9_-]+}. Profiles are not enabled
+     * automatically by {@link SearchOrder#production()}.</p>
      *
      * @param profile profile name matching [a-zA-Z0-9_-]+
      * @return this builder
@@ -96,6 +121,9 @@ public final class KissConfigBuilder {
     /**
      * Sets the source search order.
      *
+     * <p>{@link SearchOrder} is read order. Priority depends on the active
+     * {@link MergeStrategy}.</p>
+     *
      * @param searchOrder search order
      * @return this builder
      */
@@ -106,6 +134,9 @@ public final class KissConfigBuilder {
 
     /**
      * Sets the merge strategy.
+     *
+     * <p>The default is {@link MergeStrategy#FILL_MISSING_ONLY}. Override and duplicate-fail
+     * behavior must be selected explicitly.</p>
      *
      * @param mergeStrategy merge strategy
      * @return this builder
@@ -118,6 +149,10 @@ public final class KissConfigBuilder {
     /**
      * Controls missing explicit file behavior.
      *
+     * <p>Auto-discovered missing files are skipped. Explicit files declared through
+     * {@link ConfigLocation#file(String)} or {@link ConfigLocation#envFile(String)} fail when
+     * missing unless this is set to {@code true}.</p>
+     *
      * @param ignoreMissingExplicitFiles true to skip missing explicit files
      * @return this builder
      */
@@ -127,7 +162,7 @@ public final class KissConfigBuilder {
     }
 
     /**
-     * Loads and maps configuration to the target type, returning only the mapped value.
+     * Loads and maps configuration to the target record type, returning only the mapped value.
      *
      * @param targetType target type
      * @param <T> target type
@@ -138,7 +173,7 @@ public final class KissConfigBuilder {
     }
 
     /**
-     * Loads and maps configuration to the target type, returning value, sources, map, and report.
+     * Loads and maps configuration to the target record type, returning value, sources, map, and report.
      *
      * @param targetType target type
      * @param <T> target type
