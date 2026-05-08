@@ -19,8 +19,6 @@ KissConfig reads configuration sources, normalizes keys, merges them determinist
 
 Latest GitHub release: `0.1.0`.
 
-Current development version: `0.1.1-SNAPSHOT`.
-
 The release workflow completed for `0.1.0`, but the artifact was not yet visible from Maven Central public repositories during this audit. Until Maven Central indexing is confirmed, use a local build.
 
 ## Why this exists

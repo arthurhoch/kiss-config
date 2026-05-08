@@ -8,10 +8,10 @@ Maven coordinates:
 io.github.arthurhoch:kiss-config
 ```
 
-Current project version:
+Latest documented release:
 
 ```text
-0.1.1-SNAPSHOT
+0.1.0
 ```
 
 Repository:

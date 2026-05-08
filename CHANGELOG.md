@@ -2,7 +2,7 @@
 
 All notable changes to KissConfig are documented here.
 
-## 0.1.1-SNAPSHOT
+## Unreleased
 
 - Unreleased changes will be documented here.
 

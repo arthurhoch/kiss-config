@@ -16,12 +16,6 @@ Latest GitHub release:
 0.1.0
 ```
 
-Current development version after the first release:
-
-```text
-0.1.1-SNAPSHOT
-```
-
 ## Required Manual Setup
 
 Before future releases or Central publication completion:
@@ -85,7 +79,7 @@ JUnit Jupiter is allowed for tests. Production code must remain standard-library
 3. The workflow sets the Maven version, verifies, signs, deploys, tags, and creates a GitHub Release.
 4. Review and publish the deployment in Central Portal if `autoPublish=false`.
 5. Wait for Maven Central indexing.
-6. After validation, update `main` to the next development version, such as `0.1.2-SNAPSHOT`.
+6. After validation, update `main` to the next development `-SNAPSHOT` version.
 
 ## Indexing Delay
 

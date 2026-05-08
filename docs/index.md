@@ -13,7 +13,7 @@ Part of the KISS Java Libraries family.
 
 > Load configuration from properties, .env files, system properties, and environment variables directly into immutable Java records.
 
-Status: latest GitHub release is `0.1.0`; current development version is `0.1.1-SNAPSHOT`. Use a local build until Maven Central public indexing is confirmed.
+Status: latest documented GitHub release is `0.1.0`. Use a local build until Maven Central public indexing is confirmed.
 
 ## Install
 

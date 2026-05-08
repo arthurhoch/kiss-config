@@ -6,7 +6,6 @@ Do not create tags, GitHub releases, or Maven Central publications outside the i
 
 ## Current State
 
-- Current development version after the first release: `0.1.1-SNAPSHOT`
 - Latest GitHub release: `0.1.0`
 - Maven Central status: release workflow completed, but public availability is not claimed until Central Portal publication and indexing are confirmed
 - Publishing path: Sonatype Central Portal through `org.sonatype.central:central-publishing-maven-plugin`
@@ -75,7 +74,7 @@ After `0.1.0` is published and validated:
 1. Wait for Maven Central indexing.
 2. Confirm the artifact page is visible in Central Portal and Maven Central search.
 3. Update README installation language if needed.
-4. Change `main` to the next development version, such as `0.1.1-SNAPSHOT`.
+4. Change `main` to the next development `-SNAPSHOT` version.
 5. Add a new changelog section for the next development cycle.
 6. Confirm Pages published docs and Javadocs.
 

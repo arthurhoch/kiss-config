@@ -176,17 +176,17 @@ Result at audit time:
 
 This does not by itself indicate a failed release workflow. Maven Central publication and indexing can take time, and `autoPublish=false` can require manual Central Portal publication.
 
-## 9. Version Change To 0.1.1-SNAPSHOT
+## 9. Version Change To Next Development Snapshot
 
 Command:
 
 ```bash
-mvn -B versions:set -DnewVersion=0.1.1-SNAPSHOT -DgenerateBackupPoms=false
+mvn -B versions:set -DnewVersion=NEXT-SNAPSHOT -DgenerateBackupPoms=false
 ```
 
 Result: PASS.
 
-`CHANGELOG.md` now contains a new `0.1.1-SNAPSHOT` section for unreleased changes.
+`CHANGELOG.md` now contains a new unreleased section for future changes.
 
 ## 10. Next Development Commit Hash
 
@@ -197,7 +197,7 @@ Result: PASS.
 Commit message:
 
 ```text
-Prepare next development version 0.1.1-SNAPSHOT
+Prepare next development version
 ```
 
 The next-development commit was pushed to `main`. A later report commit records this release report, so remote `main` now points to:

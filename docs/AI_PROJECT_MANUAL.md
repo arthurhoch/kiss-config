@@ -4,7 +4,7 @@
 
 - Project name: KissConfig
 - Maven coordinates: `io.github.arthurhoch:kiss-config`
-- Current project version: `0.1.1-SNAPSHOT`
+- Latest documented release: `0.1.0`
 - Java version: 17+
 - Package root: `io.github.arthurhoch.kissconfig`
 - Repository URL: `https://github.com/arthurhoch/kiss-config`
@@ -864,8 +864,6 @@ Avoid tests that depend on the real machine environment. Use injected maps for s
 
 ## 22. Release Process
 
-Current development version is `0.1.1-SNAPSHOT`.
-
 Release version should be `0.1.0`.
 
 Before release:
@@ -881,7 +879,7 @@ Before release:
 5. Run the manual release workflow with version `0.1.0`.
 6. Review and publish the validated deployment in Central Portal if `autoPublish=false`.
 7. Wait for Maven Central indexing.
-8. Update `main` to the next development version, such as `0.1.2-SNAPSHOT`, after a future release.
+8. Update `main` to the next development `-SNAPSHOT` version after a future release.
 
 Do not claim Maven Central availability before the artifact is actually published and indexed.
 
