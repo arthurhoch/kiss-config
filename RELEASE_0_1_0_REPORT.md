@@ -200,10 +200,10 @@ Commit message:
 Prepare next development version 0.1.1-SNAPSHOT
 ```
 
-Remote `main` points to:
+The next-development commit was pushed to `main`. A later report commit records this release report, so remote `main` now points to:
 
 ```text
-78311ad14a4520350cb8e234e244a620050fc882
+6c31f35b50eb640d380d1107ff5475ea03b4d78c
 ```
 
 ## 11. Remaining Manual Checks
