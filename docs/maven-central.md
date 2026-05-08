@@ -16,10 +16,10 @@ First release target:
 0.1.0
 ```
 
-Current project version for the release commit:
+Current development version after the first release:
 
 ```text
-0.1.0
+0.1.1-SNAPSHOT
 ```
 
 ## Required Manual Setup

@@ -2,6 +2,10 @@
 
 All notable changes to KissConfig are documented here.
 
+## 0.1.1-SNAPSHOT
+
+- Unreleased changes will be documented here.
+
 ## 0.1.0 - 2026-05-08
 
 - Initial project structure for the `io.github.arthurhoch:kiss-config` Maven artifact.

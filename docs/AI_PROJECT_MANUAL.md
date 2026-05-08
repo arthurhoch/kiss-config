@@ -4,7 +4,7 @@
 
 - Project name: KissConfig
 - Maven coordinates: `io.github.arthurhoch:kiss-config`
-- Current project version: `0.1.0`
+- Current project version: `0.1.1-SNAPSHOT`
 - Java version: 17+
 - Package root: `io.github.arthurhoch.kissconfig`
 - Repository URL: `https://github.com/arthurhoch/kiss-config`
