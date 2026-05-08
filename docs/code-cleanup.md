@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Safe Code Cleanup
 
 KissConfig is a Java 17 configuration library with a small public API and documented record-mapping behavior. Cleanup must preserve source-order semantics, secret masking, deterministic reports, and release compatibility.

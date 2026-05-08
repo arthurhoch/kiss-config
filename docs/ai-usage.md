@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # AI Usage Guide
 
 This page gives AI coding agents and maintainers a compact user-facing guide for using KissConfig correctly in consumer projects. For changes to this repository, `AGENTS.md`, `PROJECT_CONTEXT.md`, `docs/AI_PROJECT_MANUAL.md`, and `.github/ALL_MARKDOWN.md` remain authoritative.

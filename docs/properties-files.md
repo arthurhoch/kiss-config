@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Properties Files
 
 KissConfig parses `.properties` files with `java.util.Properties` through a UTF-8 reader.

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Mapping
 
 KissConfig maps the merged and interpolated `ConfigMap` to a Java object. In v0.1.0, Java records are the supported target type.

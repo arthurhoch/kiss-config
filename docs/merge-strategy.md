@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Merge Strategy
 
 `MergeStrategy` controls how values from later sources interact with values already loaded from earlier sources.

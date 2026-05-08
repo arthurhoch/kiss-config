@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # KissConfig AI Project Manual
 
 ## 1. Project Identity

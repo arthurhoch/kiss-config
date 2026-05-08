@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Reporting
 
 Use `KissConfigResult<T>` when you need diagnostics in addition to the mapped object.

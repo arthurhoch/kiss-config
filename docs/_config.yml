@@ -1,0 +1,15 @@
+title: KissConfig
+description: Tiny zero-dependency Java 17+ configuration library for properties, .env files, system properties, and environment variables.
+url: "https://arthurhoch.github.io"
+baseurl: "/kiss-config"
+repo_url: "https://github.com/arthurhoch/kiss-config"
+maven_url: "https://central.sonatype.com/artifact/io.github.arthurhoch/kiss-config"
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

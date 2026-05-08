@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Search Order
 
 `SearchOrder` is read order. It is not priority by name.

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Secrets
 
 KissConfig masks secret values in reports and exceptions where possible.

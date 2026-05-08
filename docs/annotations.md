@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Annotations
 
 Annotations live under `io.github.arthurhoch.kissconfig.annotations`.

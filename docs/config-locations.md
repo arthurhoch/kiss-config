@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Config Locations
 
 `ConfigLocation` describes one place KissConfig can read from. Locations are placed in a `SearchOrder`, and the order is read order.

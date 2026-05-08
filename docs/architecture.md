@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Architecture
 
 KissConfig has a small deterministic loading pipeline:

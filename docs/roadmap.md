@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Roadmap
 
 This roadmap is non-binding. Items listed here are not part of v0.1.0 unless implemented, tested, and documented.

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Profiles
 
 KissConfig supports one active profile in v0.1.0.

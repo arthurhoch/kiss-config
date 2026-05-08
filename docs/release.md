@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Release
 
 KissConfig releases are manual through `.github/workflows/release.yml`.

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # API
 
 This is the compact public API reference for v0.1.0.

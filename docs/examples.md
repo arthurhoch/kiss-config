@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Examples
 
 These examples are written to compile against the v0.1.0 public API. Mapping targets are Java records unless a section explicitly says otherwise.

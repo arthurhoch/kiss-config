@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Interpolation
 
 KissConfig supports variable interpolation in property and env values.

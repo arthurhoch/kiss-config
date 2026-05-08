@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Getting Started
 
 KissConfig needs Java 17 or newer and has no production dependencies.

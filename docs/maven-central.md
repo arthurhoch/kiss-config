@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Maven Central
 
 KissConfig is prepared for Sonatype Central Portal publishing.

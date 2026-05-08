@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Env Files
 
 `.env` files are opt-in. KissConfig never loads `.env` unless `.envFile(...)` is configured on the builder or `ConfigLocation.envFile(...)` is explicitly present in the search order.

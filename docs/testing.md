@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Testing
 
 KissConfig's project test suite uses JUnit Jupiter. Production code has zero dependencies.

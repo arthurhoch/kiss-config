@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Security
 
 KissConfig is designed to load configuration predictably while avoiding accidental secret exposure.

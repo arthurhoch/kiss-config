@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # GitHub Pages
 
 The Pages workflow publishes:
