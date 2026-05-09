@@ -66,6 +66,7 @@ AppConfig config = KissConfig.load(AppConfig.class);</code></pre>
   <div class="doc-grid">
     <a href="getting-started.html">Getting Started<span>Install and load the first config.</span></a>
     <a href="api.html">API Reference<span>Public API and result types.</span></a>
+    <a href="skills/index.html">AI Skills<span>Versioned Markdown skill files for AI-assisted usage.</span></a>
     <a href="search-order.html">Search Order<span>Source ordering and presets.</span></a>
     <a href="config-locations.html">Config Locations<span>File, classpath, and explicit locations.</span></a>
     <a href="merge-strategy.html">Merge Strategy<span>Conflict behavior and source metadata.</span></a>

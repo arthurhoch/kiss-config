@@ -392,6 +392,7 @@ These libraries are independent, zero-dependency Java 17+ projects. Use only the
 ## Documentation
 
 - [GitHub Pages](https://arthurhoch.github.io/kiss-config/)
+- [Versioned AI Skills](docs/skills/index.md)
 - [Getting Started](docs/getting-started.md)
 - [AI Usage Guide](docs/ai-usage.md)
 - [API](docs/api.md)

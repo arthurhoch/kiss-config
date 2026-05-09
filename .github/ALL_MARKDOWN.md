@@ -120,3 +120,11 @@ This file indexes every Markdown document in the repository, excluding generated
 | [`architecture/decisions/0005-records-are-primary-target.md`](architecture/decisions/0005-records-are-primary-target.md) | Records are the supported v0.1.0 mapping target. | Mapping target changes. | AI-facing | Yes |
 | [`architecture/decisions/0006-classpath-library-defaults-location.md`](architecture/decisions/0006-classpath-library-defaults-location.md) | Library defaults location. | Classpath library defaults changes. | AI-facing | Yes |
 | [`architecture/decisions/0007-no-yaml-json-toml-in-core.md`](architecture/decisions/0007-no-yaml-json-toml-in-core.md) | No YAML/JSON/TOML in core. | Parser/scope changes. | AI-facing | Yes |
+
+## Versioned AI Skills
+
+| File | Purpose |
+|------|---------|
+| `.github/skills-release-policy.md` | Release policy requiring versioned AI skill files for each tag |
+| `docs/skills/index.md` | GitHub Pages index of downloadable AI skill files by version |
+| `docs/skills/v0.1.0.md` | Versioned Markdown AI skill for KissConfig release 0.1.0 |
