@@ -53,7 +53,15 @@ jobs:
       - name: Add Javadocs
         run: |
           mkdir -p _site/javadocs
-          cp -R target/site/apidocs/. _site/javadocs/
+          if [ -d target/reports/apidocs ]; then
+            cp -R target/reports/apidocs/. _site/javadocs/
+          elif [ -d target/site/apidocs ]; then
+            cp -R target/site/apidocs/. _site/javadocs/
+          else
+            echo "Javadocs not found under target/reports/apidocs or target/site/apidocs"
+            find target -maxdepth 4 -type d -name apidocs -print || true
+            exit 1
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
